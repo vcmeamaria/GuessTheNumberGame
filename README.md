@@ -17,8 +17,8 @@ A GUI-based number guessing game built with Python and Tkinter. Work your way th
 Clone the repository using Git:
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/vcmeamaria/GuessTheNumberGame.git
+
 ```
 
 Or download it as a ZIP from GitHub and extract it somewhere on your machine.
@@ -46,7 +46,3 @@ assets/
 ```
 
 If the folder or files are missing, the game will still run fine - it just falls back to a default system beep instead of the custom sounds.
-
----
-
-
