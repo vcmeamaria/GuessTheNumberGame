@@ -112,4 +112,50 @@ Only **whole integers** are accepted. Anything else will trigger an error messag
 
 ---
 
+## 3. Game Information
+
+### About This Project
+
+This game was built with the goal of practising core programming concepts - functions, input validation, global state, and modular code structure. It goes beyond a basic terminal game by adding a full graphical interface, sound effects, and a multi-level progression system.
+
+### Features
+
+-  **Graphical interface** built with Tkinter — no terminal needed
+-  **Sound effects** for correct guesses, wrong guesses, level completions, and game over
+-  **11 progressive levels** with increasing number ranges
+-  **Temperature + direction hints** after every wrong guess
+-  **Carried attempts** system that rewards efficient play
+-  **Stats tracker** showing your performance across the session
+-  **Hidden debug tool** - hover over the invisible label at the bottom of the game screen to peek at the secret number (useful for testing)
+
+### File Structure
+
+```
+project/
+|--- main.py           # Entry point - creates the game and GUI objects and launches the window
+|--- game_logic.py     # All game rules and state - GuessTheNumberGame class lives here
+|--- gui.py            # All screens and widgets - GuessTheNumberGUI class lives here
+|--- sound_manager.py  # Handles playing sound effects from the assets folder
+|--- assets/           # Folder containing .wav sound files
+|--- README.md         # You're reading it
+```
+
+- **`main.py`** is the only file you need to run. It connects the game logic and GUI together.
+- **`game_logic.py`** handles everything that happens under the hood - generating the secret number, validating guesses, calculating hints, tracking attempts, and managing level progression.
+- **`gui.py`** handles everything the player sees - drawing screens, reading input, and responding to button clicks.
+- **`sound_manager.py`** is a small helper that maps game events (like `"success"` or `"game_over"`) to audio files and plays them.
+
+### Stats Tracked
+
+The game keeps track of the following throughout your session:
+
+| Stat | What it counts |
+|------|----------------|
+| **Levels completed** | How many levels you've successfully guessed |
+| **Total guesses** | Every valid guess made across all levels |
+| **Invalid inputs** | Every time you entered something that wasn't accepted |
+| **Games played** | How many full games you've started |
+| **Current carried attempts** | Spare attempts being carried into the next level |
+
+Hit the **Show Stats** button on the game screen at any time to see your current numbers.
 
